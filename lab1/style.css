@@ -1,0 +1,41 @@
+li { list-style-type: square }
+
+#cena {
+    color: red;
+    font-weight: bold;
+}
+
+.wstep {
+    font-style: italic;
+}
+
+td img {
+    border: 2px solid blue; /* Domyślny kolor ramki */
+}
+
+/* Reguła CSS dla obrazka okładki po najechaniu myszką */
+td img:hover {
+    border-color: red; /* Zmiana koloru ramki na czerwony */
+}
+
+h1 + h2 {
+    letter-spacing: 5px;
+}
+
+td[colspan="2"] > p {
+    font-size: small;
+}
+
+p + p {
+    color: gray;
+}
+
+body {
+    background-image: url(./img/tlo.jpg);
+    background-repeat: repeat-y;
+}
+
+h1 { color: blue }
+h1 { color: green } /*dziala ostatnia */
+
+h1 { color: yellow; }
