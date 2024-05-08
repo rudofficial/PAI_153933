@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>jQuery</title>
+    <script type="text/javascript"
+        src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        function edit() {
+            const row = $(this);
+            row.html('<input id="edit" value="' + row.html() + '">');
+            
+            $('#edit').blur(() => {
+                row.text($('#edit').val());
+                row.one('click', edit);
+            }).focus();
+
+            // Wyzwalanie zdarzenia "asdf"
+            $('button').trigger('asdf');
+        }
+        
+        $(function () {
+            $('td').one('click', edit);
+        });
+
+        // Dodanie zdarzenia "asdf" do wszystkich przycisków
+        $(document).ready(function() {
+            $('button').bind('asdf', function () {
+                alert('Asdf!');
+            });
+        });
+
+        // Usunięcie obsługi wszystkich zdarzeń dla wszystkich elementów na stronie
+        // $(function() {
+        //     $('*').unbind();
+        // });
+
+    </script>
+</head>
+<body>
+    <table>
+        <tr><td>Wlazł</td></tr>
+        <tr><td>kotek</td></tr>
+        <tr><td>na</td></tr>
+        <tr><td>...</td></tr>
+    </table>  
+        
+    <button>Kliknij mnie</button>
+</body>
+</html>

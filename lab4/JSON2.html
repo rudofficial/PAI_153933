@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>JSON</title>
+<script type="text/javascript"
+    src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+    $(function () {
+        $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?", { tags: //getjson побера данэ з сервера
+        "cars", format: "json" }, function (data) { //тэги которые хотим найти, функшн дата то функц звротна по побраню даных
+        $.each(data.items, function (i, item) {
+        $('div').append($("<img/>").attr("src", item.media.m));
+        });
+    });
+});
+</script>
+</head>
+<body>
+<div></div>
+</body>
+</html>
